@@ -8,6 +8,10 @@ import java.util.Comparator;
  * ID: 1449872
  */
 public class PersonComparator implements Comparator<Person> {
+    /**
+     * The most powerful and thoughtful constructor ever
+     * devised by man is noted below
+     */
     public PersonComparator() {
 
     }
