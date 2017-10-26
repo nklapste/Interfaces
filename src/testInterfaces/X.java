@@ -1,0 +1,4 @@
+package testInterfaces;
+
+interface X {
+}
