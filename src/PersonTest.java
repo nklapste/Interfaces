@@ -45,7 +45,6 @@ public class PersonTest {
         // (if we randomized test set this would have to rethought)
         int lastAge = 0;
         for (Person person : persons) {
-            System.out.println(person);
             // ensure person tree is in proper order
             assertTrue(lastAge <= person.getAge());
             lastAge = person.getAge();
