@@ -15,6 +15,9 @@ public class TestClassRelations {
 //        B b1 = new U();
 //        Z z1 = new U();
 //        G g2 = X.class;
+        // x = b therefore g = x should be the same as g = b
+        // which should fail (which it does)
+//          G g3 = new B();
 
     }
 }
