@@ -19,6 +19,8 @@ public class Coffee implements Comparable<Coffee> {
 
     @Override
     public int compareTo(final Coffee c) {
+        // use Integer's compare method as were comparing two integers
+        // (coffee strength guaranteed to be int)
         return Integer.compare(this.strength, c.getStrength());
 
     }

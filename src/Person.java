@@ -17,6 +17,8 @@ public class Person implements Comparable<Person> {
 
     @Override
     public int compareTo(Person p) {
+        // use Integer's compare method as were comparing two integers
+        // (person age is guaranteed to be int)
         return Integer.compare(this.age, p.getAge());
     }
 

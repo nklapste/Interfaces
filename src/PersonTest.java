@@ -2,6 +2,7 @@
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import static org.junit.Assert.assertTrue;
 
 // imports needed (intelliJ IDEA helps)
 import java.util.Set;
@@ -18,6 +19,12 @@ import java.util.TreeSet;
 public class PersonTest {
     private Set<Person> persons;
 
+    /**
+     * Simple Junit setup that creates a predefined TreeSet of persons
+     * to be sorted (in setUp) and validated (in runTest).
+     *
+     * Could be randomized for better test coverage.
+     */
     @Before
     public void setUp() throws Exception {
         persons = new TreeSet<Person>(new PersonComparator());
@@ -33,13 +40,14 @@ public class PersonTest {
     }
 
     @Test
-    public void runTest() {
-        // TODO: Assignment 5 Part 3 -- rewrite this using JUnit
-
+    public void TestOrder() {
+        // lastAge is set to 0 as this is the determined min age (logically)
+        // (if we randomized test set this would have to rethought)
         int lastAge = 0;
         for (Person person : persons) {
             System.out.println(person);
-            assert lastAge <= person.getAge();
+            // ensure person tree is in proper order
+            assertTrue(lastAge <= person.getAge());
             lastAge = person.getAge();
         }
     }

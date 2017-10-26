@@ -2,6 +2,7 @@
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import static org.junit.Assert.assertTrue;
 
 // imports needed (intelliJ IDEA helps)
 import java.util.ArrayList;
@@ -19,6 +20,12 @@ import java.util.List;
 public class CoffeeTest {
     private List<Coffee> coffees;
 
+    /**
+     * Simple Junit setup that creates a predefined List of coffees
+     * to be sorted later in testComparable.
+     *
+     * Could be randomized for better test coverage.
+     */
     @Before
     public void setUp() throws Exception {
         coffees = new ArrayList<Coffee>();
@@ -35,15 +42,13 @@ public class CoffeeTest {
 
     @Test
     public void testComparable() {
-        // TODO: Assignment 5 Part 1 -- rewrite this using JUnit
         Collections.sort(coffees);
-
+        // grab the first element of coffee as starting comparision
         int lastStrength = coffees.get(0).getStrength();
 
-        System.out.println("Coffees in order of strength:");
         for (Coffee type : coffees) {
-            System.out.println(type);
-            assert lastStrength <= type.getStrength();
+            // ensure list of coffee is in proper order
+            assertTrue(lastStrength <= type.getStrength());
             lastStrength = type.getStrength();
 
         }
